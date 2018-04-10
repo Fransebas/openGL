@@ -10,7 +10,12 @@
 #define GLObject_hpp
 
 #include <stdio.h>
-#include <GL/glew.h>
+
+#if defined(__APPLE__)
+    #include <GL/glew.h>
+#else
+    #include <glad/glad.h>
+#endif
 
 class GLObject
 {

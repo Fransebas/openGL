@@ -12,7 +12,11 @@
 #include <string>
 #include <iostream>
 #include <stdio.h>
+#if defined(__APPLE__)
 #include <GL/glew.h>
+#else
+#include <glad/glad.h>
+#endif
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
