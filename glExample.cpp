@@ -18,7 +18,6 @@
 
 #include <iostream>
 
-#include "glExample.hpp"
 #include "GLObject.hpp"
 #include "GLEBOObject.hpp"
 #include "Uniform.hpp"
@@ -201,7 +200,7 @@ GLFWwindow * initWindow(int width, int height)
     glfwGetFramebufferSize(window, &screenWidth, &screenHeight);
     
     if(nullptr==window){
-        cout << "window not initialized" << endl;
+        std::cout << "window not initialized" << std::endl;
         glfwTerminate();
     }
     
@@ -209,7 +208,7 @@ GLFWwindow * initWindow(int width, int height)
     glewExperimental = GL_TRUE;
     
     if(GLEW_OK != glewInit()){
-        cout  << "glewInit not initialized" << endl;
+        std::cout  << "glewInit not initialized" << std::endl;
         glfwTerminate();
     }
     
@@ -325,4 +324,9 @@ void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
     
     xposPrev = xpos;
     yposPrev = ypos;
+}
+
+int main(int argc, char *argv[])
+{
+    return init(argc, argv);
 }
